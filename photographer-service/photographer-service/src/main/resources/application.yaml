@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  application:
+    name: photographer-service
+  config:
+    import: "optional:configserver:http://localhost:8088"
+  datasource:
+    url: jdbc:mysql://localhost:3306/photographer?allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+    password: 1124
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 8082
+
+
+
