@@ -80,7 +80,7 @@ public class PhotographerController {
             // Extract relevant data
             Map<String, Object> photographerData = Map.of(
                     "businessName", photographer.getBusinessName(),
-                    "packageDetails", photographer.getPackageDetails() // Adjust based on how you structure packages
+                    "packageDetails", photographer.getPackageDetails()
             );
             return photographerData;
         }).collect(Collectors.toList());
@@ -103,7 +103,7 @@ public class PhotographerController {
             // Handle packageDetails conversion
             Map<String, String> convertedPackageDetails = new HashMap<>();
             for (Map.Entry<String, String> entry : updatedPhotographer.getPackageDetails().entrySet()) {
-                String detailsString = entry.getValue(); // Convert nested data to a single string if needed
+                String detailsString = entry.getValue();
                 convertedPackageDetails.put(entry.getKey(), detailsString);
             }
             photographer.setPackageDetails(convertedPackageDetails);
